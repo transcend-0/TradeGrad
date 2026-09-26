@@ -5,10 +5,10 @@ This is the implementation of our paper *Trading Strategy Optimization via Textu
 TradeGrad uses an LLM to iteratively rewrite a trading strategy's source code, guided by textual
 feedback derived from its own backtest performance. The optimizer, **TradeTGD**, samples a
 reference set from the score-ranked strategies tried so far, writes a textual gradient against
-that set plus a running memory summary, picks the next base program *uniformly* from the
-references (rather than always the top scorer, which freezes the search around one strategy), and
+that set plus a running memory summary, picks the next base program uniformly from the
+references, and
 revises it as either a small local edit or a full rewrite. Training is scored by the worst-30%
-CVaR over yearly backtest windows, not the mean, so the search can't win by blowing up in a bad
+CVaR over yearly backtest windows, so the search can't win by blowing up in a bad
 year; a trade-frequency gate rules out the degenerate "stop trading to flatten drawdown" solution.
 
 ## Layout
