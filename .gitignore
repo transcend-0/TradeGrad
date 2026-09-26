@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+
+# run outputs
+/result/
+/log/
+
+/script/my_*
+
+.env
